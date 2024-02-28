@@ -1,0 +1,9 @@
+<motion.div
+              variants={variantsExit1}
+              className="flex rounded-b-lg lg:w-6/12 lg:rounded-l-lg rounded-br-none bg-[#1F1F47] z-10"
+              style={{
+                background:
+                  "linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593)",
+              }}
+          
+            >
