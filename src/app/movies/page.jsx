@@ -199,7 +199,7 @@ export default function Movies() {
               >
                 New Released Movies
               </motion.h2>
-              <div className="flex flex-wrap justify-center items-center mt-4 gap-4">
+              <div className="flex flex-wrap justify-center items-center mt-4 gap-2 md:gap-4">
                 {suggestions.map((movie) => (
                   <div
                     key={movie.id}
@@ -208,9 +208,9 @@ export default function Movies() {
                     <img
                       src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                       alt={movie.title}
-                      className="w-32 h-48 object-cover brightness-[0.6] hover:brightness-100 transition-all rounded-3xl"
+                      className="md:w-32 md:h-48 object-cover brightness-[0.6] hover:brightness-100 transition-all rounded-3xl"
                     />
-                    <p className="text-white text-[10px] mt-2">{movie.title}</p>
+                    <p className="text-white text-center font-semibold md:font-normal text-[30px] md:text-[10px] mt-2">{movie.title}</p>
                   </div>
                 ))}
               </div>

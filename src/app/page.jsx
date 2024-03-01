@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaRegPlayCircle } from "react-icons/fa";
 import { BiCameraMovie } from "react-icons/bi";
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
   const firstDivRef = useRef(null);
@@ -54,11 +54,21 @@ export default function Home() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const variants5 = {
+    hidden: { opacity: 0, y: 200 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const variants6 = {
+    hidden: { opacity: 0, y: 200 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     } else {
-      controls.start('hidden');
+      controls.start("hidden");
     }
   }, [controls, inView]);
 
@@ -85,7 +95,7 @@ export default function Home() {
           animate="visible"
           variants={variants}
           transition={{ duration: 0.5 }}
-          className=" w-[80%] md:w-[60%] lg:w-[60%] md:h-[50vh] lg:h-[60vh] bg-gradient-to-b from-[#000000c2] rounded-t-[40px] mt-[5vh] carousel carousel-vertical z-10 shadow-2xl shadow-black"
+          className=" w-[90%] md:w-[60%] lg:w-[60%] md:h-[50vh] lg:h-[60vh] bg-gradient-to-b from-[#000000c2] rounded-t-[40px] mt-[5vh] carousel carousel-vertical z-10 shadow-2xl shadow-black"
         >
           <div className="relative">
             <div className="group">
@@ -97,7 +107,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
+              <div className="hidden md:flex carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
                 <img src="./p2.JPG" alt="Image 2" className="w-full h-auto" />
                 <div className="absolute top-[-30px] left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white text-[80px]  opacity-70 hover:opacity-100 transition-all duration-200">
@@ -105,7 +115,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
+              <div className="hidden md:flex carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
                 <img src="./p3.JPG" alt="Image 3" className="w-full h-auto" />
                 <div className="absolute top-[-30px] left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white text-[80px]  opacity-70 hover:opacity-100 transition-all duration-200">
@@ -113,7 +123,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
+              <div className="hidden md:flex carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
                 <img src="./p4.JPG" alt="Image 4" className="w-full h-auto" />
                 <div className="absolute top-[-30px] left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white text-[80px]  opacity-70 hover:opacity-100 transition-all duration-200">
@@ -121,7 +131,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
+              <div className="hidden md:flex carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
                 <img src="./p5.JPG" alt="Image 5" className="w-full h-auto" />
                 <div className="absolute top-[-30px] left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white text-[80px]  opacity-70 hover:opacity-100 transition-all duration-200">
@@ -129,7 +139,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
+              <div className="hidden md:flex carousel-item relative overflow-hidden transition-transform duration-300 transform group-hover:scale-110 group-hover:brightness-100 group-hover:shadow-inner">
                 <img src="./p6.JPG" alt="Image 6" className="w-full h-auto" />
                 <div className="absolute top-[-30px] left-0 w-full h-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p className="text-white text-[80px]  opacity-70 hover:opacity-100 transition-all duration-200">
@@ -143,25 +153,35 @@ export default function Home() {
 
         <div
           ref={secondDivRef}
-          className="flex z-9 text-violet-600 opacity-35 lg:text-[250px] font-black mt-[-130px]"
+          className="flex z-9 text-violet-600 opacity-35 text-[50px] md:text-[250px] font-black md:mt-[-130px] "
         >
           New movieS
         </div>
 
-        <motion.div 
+        <motion.div className="flex w-[190%] md:w-screen md:mt-[-120px]">
+          <img
+            src="/banner.JPG"
+            className="grayscale hover:grayscale-0 transition-all ease-in-out duration-300"
+          ></img>
+        </motion.div>
 
-        className="w-screen md:mt-[-120px]"><img src="/banner.JPG" className="grayscale hover:grayscale-0 transition-all ease-in-out duration-300"></img></motion.div>
 
-        <div className="w-full dark:bg-gray-800 h-full py-6 sm:py-8 lg:py-12 md:w-full">
+
+        <motion.div
+          ref={ref1}
+          animate={controls}
+          initial="hidden"
+          variants={variants5}
+          transition={{ duration: 0.7 }}
+          className="w-full dark:bg-gray-800 h-full py-6 sm:py-8 lg:py-12 md:w-full"
+        >
           <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
               <motion.div
-               ref={ref1}
-               animate={controls}
-               initial="hidden"
-               variants={variants1}
-               transition={{ duration: 0.3 }}
-              
+                animate={controls}
+                initial="hidden"
+                variants={variants1}
+                transition={{ duration: 0.3 }}
                 className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
               >
                 <img
@@ -175,11 +195,10 @@ export default function Home() {
               </motion.div>
 
               <motion.div
-           ref={ref1}
-           animate={controls}
-           initial="hidden"
-           variants={variants1}
-           transition={{ duration: 0.3 }}
+                animate={controls}
+                initial="hidden"
+                variants={variants1}
+                transition={{ duration: 0.3 }}
                 className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80 "
               >
                 <img
@@ -190,14 +209,13 @@ export default function Home() {
                 />
 
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
-                </motion.div>
+              </motion.div>
 
-                <motion.div
-            ref={ref1}
-            animate={controls}
-            initial="hidden"
-            variants={variants1}
-            transition={{ duration: 0.5 }}
+              <motion.div
+                animate={controls}
+                initial="hidden"
+                variants={variants1}
+                transition={{ duration: 0.5 }}
                 className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80"
               >
                 <img
@@ -210,32 +228,27 @@ export default function Home() {
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
               </motion.div>
 
-
               <Link href="/signin">
-              <motion.div
-              ref={ref1}
-              animate={controls}
-              initial="hidden"
-              variants={variants1}
-              transition={{ duration: 0.5 }}
-                className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
-                  loading="lazy"
-                  alt="Photo by Lorenzo Herrera"
-                  className="absolute inset-0 h-full w-full object-cover object-center transition duration-300 group-hover:scale-110 grayscale hover:grayscale-0"
-                />
+                <motion.div
+                  animate={controls}
+                  initial="hidden"
+                  variants={variants1}
+                  transition={{ duration: 0.5 }}
+                  className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&q=75&fit=crop&w=600"
+                    loading="lazy"
+                    alt="Photo by Lorenzo Herrera"
+                    className="absolute inset-0 h-full w-full object-cover object-center transition duration-300 group-hover:scale-110 grayscale hover:grayscale-0"
+                  />
 
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
-              </motion.div>
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
+                </motion.div>
               </Link>
             </div>
           </div>
-        </div>
-       
-
-
+        </motion.div>
       </div>
       <div className="blob1 hidden md:flex lg:flex mt-[-220vh]"></div>
       <div className="blob3 hidden md:flex lg:flex mt-[-220vh]"></div>

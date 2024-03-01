@@ -1,9 +1,10 @@
 {
   "/not-found": "app/not-found.js",
+  "/about/page": "app/about/page.js",
+  "/page": "app/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/signin/page": "app/signin/page.js",
   "/movies/page": "app/movies/page.js",
   "/tvshows/page": "app/tvshows/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/live/page": "app/live/page.js",
-  "/about/page": "app/about/page.js",
-  "/page": "app/page.js"
+  "/blog/page": "app/blog/page.js"
 }

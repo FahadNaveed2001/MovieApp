@@ -288,3 +288,37 @@ body {
 }
 
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinning-icon {
+  animation: spin infinite 2s linear; /* Adjust duration and timing function as needed */
+}
+
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animated-image {
+  animation: moveUpDown 3s infinite alternate; /* Adjust duration and timing function as needed */
+}
+
+.image-container {
+  display: inline-block;
+}
+

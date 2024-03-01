@@ -34,14 +34,14 @@ export default function Live() {
           </p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 ">
           {news.map((article, index) => (
             <a
               key={index}
            
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/40"
+              className="block rounded-xl border bg-[#1F1F47] border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/40"
             >
               <img
                 src={article.urlToImage}
